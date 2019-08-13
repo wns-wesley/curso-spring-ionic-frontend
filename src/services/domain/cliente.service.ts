@@ -12,7 +12,7 @@ export class ClienteService {
 
     }
 
-    findByEmail(email: string) : Observable<ClienteDTO> {
+    findByEmail(email: string) {
         /*
         // insere o token na requisição
         // dispensado por conta do auth-interceptor
@@ -20,7 +20,7 @@ export class ClienteService {
         let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
         */
 
-        return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
             //{'headers': authHeader}
     }
 
